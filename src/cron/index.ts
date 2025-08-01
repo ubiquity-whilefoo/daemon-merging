@@ -5,7 +5,7 @@ import { Logs } from "@ubiquity-os/ubiquity-os-logger";
 import pkg from "../../package.json" with { type: "json" };
 import { createKvDatabaseHandler } from "../adapters/kv-database-handler";
 
-const RATE_LIMIT_MAX_ITEMS_PER_WINDOW = 500;
+const RATE_LIMIT_MAX_ITEMS_PER_WINDOW = 1;
 const RATE_LIMIT_WINDOW_MS = 60_000;
 
 let rateWindowStart = Date.now();
