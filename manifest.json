@@ -1,12 +1,7 @@
 {
   "name": "Daemon merging",
   "description": "Automatically merge pull-requests.",
-  "ubiquity:listeners": [
-    "issues.assigned",
-    "issues.edited",
-    "issues.unassigned",
-    "issues.closed"
-  ],
+  "ubiquity:listeners": ["issues.assigned", "issues.edited", "issues.unassigned", "issues.closed"],
   "skipBotEvents": false,
   "configuration": {
     "type": "object",
@@ -36,10 +31,7 @@
           "collaborator": {
             "default": "3.5 days",
             "description": "The timespan to wait before merging a collaborator's pull-request",
-            "examples": [
-              "1 day",
-              "3.5 days"
-            ],
+            "examples": ["1 day", "3.5 days"],
             "type": "string"
           }
         }
@@ -47,10 +39,7 @@
       "excludedRepos": {
         "default": [],
         "description": "Repositories to exclude from monitoring. Must be in the format 'owner/repo' to avoid mistakenly ignoring repositories with the same name in different organizations.",
-        "examples": [
-          "owner/repo",
-          "another-org/repo"
-        ],
+        "examples": ["owner/repo", "another-org/repo"],
         "type": "array",
         "items": {
           "pattern": "^[a-zA-Z0-9._-]+/[a-zA-Z0-9._-]+$",
@@ -60,22 +49,11 @@
         }
       },
       "allowedReviewerRoles": {
-        "default": [
-          "COLLABORATOR",
-          "MEMBER",
-          "OWNER"
-        ],
+        "default": ["COLLABORATOR", "MEMBER", "OWNER"],
         "description": "When considering a user for a task: which roles should be considered as having review authority? All others are ignored.",
         "examples": [
-          [
-            "COLLABORATOR",
-            "MEMBER",
-            "OWNER"
-          ],
-          [
-            "MEMBER",
-            "OWNER"
-          ]
+          ["COLLABORATOR", "MEMBER", "OWNER"],
+          ["MEMBER", "OWNER"]
         ],
         "type": "array",
         "items": {
